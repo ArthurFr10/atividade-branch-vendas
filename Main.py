@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, Float, String, create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 from dataclasses import dataclass
-from Arthur import menu_principal, logo, cadastro, verificando_cpf, principal
+from Arthur import principal
 
 BD = create_engine("sqlite:///bancodedadosvendas.bd")
 

@@ -1,3 +1,4 @@
+import os
 def menu_principal():
     print("="*40)
     print("""
@@ -63,9 +64,12 @@ def principal():
                 funcionario = session.query(Usuario).filter(Usuario.cpf == cpf_login).first()
                 senha_login = input("INSIRA SUA SENHA: ")
                 if senha_login == funcionario.senha:
+                    from Leonardo import menu_de_venda
                     print("="*40)
                     print(f"{"LOGIN EFETUADO COM SUCESSO!":^40}")
-                    print("="*40)        
+                    print("="*40)
+                    os.system("cls||clear")
+                    menu_de_venda()        
             case 3:
                 logo()
                 cpf_login = input("INFORME O CPF DO FUNCIONÁRIO QUE DESEJA EXCLUIR: ")
