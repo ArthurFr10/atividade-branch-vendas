@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, Float, String, create_engine
-from sqlalchemy.orm import declarative_base, sessionmaker, relationship
+from sqlalchemy.orm import declarative_base, sessionmaker
 from dataclasses import dataclass
-from Feature_main import lanche
+from Arthur import menu_principal, logo, cadastro, verificando_cpf, principal
 
 BD = create_engine("sqlite:///bancodedadosvendas.bd")
 
@@ -12,7 +12,7 @@ Base = declarative_base()
 @dataclass
 class Usuario(Base):
     __tablename__ = "vendas"
-    id = Column(Integer,primary_key=True, autoincrement=True)
+    cpf = Column(String,primary_key=True)
     nome = Column(String)
     sobrenome = Column(String)
     senha = Column(String)
@@ -26,3 +26,4 @@ class Lanche(Base):
     preco = Column(Float)
 
 Base.metadata.create_all(bind=BD)
+principal()
