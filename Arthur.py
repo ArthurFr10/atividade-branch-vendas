@@ -82,6 +82,5 @@ def principal():
             case 3:
                 logo()
                 excluir_cadastro()
-                limpar_tela()
             case 0:
                 break
