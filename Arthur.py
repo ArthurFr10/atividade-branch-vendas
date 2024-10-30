@@ -72,7 +72,6 @@ def principal():
                     cadastro()
                     while True:
                         opcao1 = int(input("DESEJA EFETUAR O CADASTRO DE UM NOVO FUNCIONÁRIO? \n1-SIM \n2-NÃO"))
-                        limpar_tela()
                         if opcao1 in [1, 2]:
                             break
                     if opcao1 ==  2:
