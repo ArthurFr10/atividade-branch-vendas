@@ -12,13 +12,12 @@ def cadastro_lanche():
         session.commit()
         print("LANCHE ADICIONADO COM SUCESSO.")
         while True:
-            opcao1 = int(input("Deseja adicionar outro lanche ? \n1-SIM \n2-NÂO"))
+            opcao1 = int(input("DESEJA CADASTRAR OUTRO LANCHE ? \n1-SIM \n2-NÂO\n:"))
             if opcao1 in [1, 2]:
                 break
         if opcao1 == 2:
             break
         
-
 def listando_lanches():
     from Main import Lanche,session
     lista_lanche = session.query(Lanche).all()
@@ -50,6 +49,7 @@ def comprando():
     return lista_valores, lista_nomes
 
 def menu():
+    limpa()
     print("""
 1- CADASTRO DE LANCHE
 2- SELECIONANDO LANCHE
@@ -62,7 +62,6 @@ def menu_de_venda():
     lista_nomes =[]
     lista_valores = []
     while True:
-        limpa()
         menu()
         opcao = int(input(": "))
         match opcao:
@@ -76,3 +75,4 @@ def menu_de_venda():
                 editar_carrinho(lista_nomes,lista_valores)
             case 0:
                 break
+        limpa()
