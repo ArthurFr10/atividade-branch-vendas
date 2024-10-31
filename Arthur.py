@@ -54,9 +54,11 @@ def fazer_login():
     funcionario = session.query(Usuario).filter(Usuario.cpf == cpf_login).first()
     senha_login = input("INSIRA SUA SENHA: ")
     if senha_login == funcionario.senha:
+        from Leonardo import menu_de_venda
         print("="*40)
         print(f"{"LOGIN EFETUADO COM SUCESSO!":^40}")
-        print("="*40)        
+        print("="*40)
+        menu_de_venda()        
 
 def principal():
     while True:
